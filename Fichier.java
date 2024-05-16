@@ -12,5 +12,3 @@ public class Fichier implements Composant {
         System.out.println(indentation + fichier.getName());
     }
 }
-
-

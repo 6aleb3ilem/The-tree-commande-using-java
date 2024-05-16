@@ -23,10 +23,13 @@ public class Dossier implements Composant {
     public void afficher(String indentation) {
         System.out.println(indentation + repertoire.getName() + File.separator);
 
-        String indentationEnfant = indentation + "  ";
-        for (Composant composant : enfants) {
-            composant.afficher(indentationEnfant);
+        for (int i = 0; i < enfants.size(); i++) {
+            Composant enfant = enfants.get(i);
+            if (i == enfants.size() - 1) {
+                enfant.afficher(indentation + "└── ");
+            } else {
+                enfant.afficher(indentation + "├── ");
+            }
         }
     }
 }
-
